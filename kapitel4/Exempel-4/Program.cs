@@ -42,7 +42,7 @@ namespace Uppgift_4_4
 
             }
             // Rätt svar
-            Console.WriteLine("Dy har gissat rätt");
+            Console.WriteLine("Du har gissat rätt");
         }
     }
 }
