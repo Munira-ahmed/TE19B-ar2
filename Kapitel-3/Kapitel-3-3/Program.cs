@@ -11,12 +11,6 @@ namespace Kapitel_3_3
             Console.WriteLine("if u wanna continue write J");
             string answer = Console.ReadLine();
 
-            while (answer ==J)
-            {
-                
-                
-            }
-
 
            
 

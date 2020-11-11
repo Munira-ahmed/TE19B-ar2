@@ -46,13 +46,7 @@ namespace lön
                 Console.WriteLine($"Du tjänar {svar3} kr efter skatt");
 
             }
-            else (val == "4")
-            {
-                Console.WriteLine("Du tjänar " + bruttolön + " och har marginalskatten" + " 53%");
-                int svar4 = bruttolön * (100 - 53) / 100;
-                Console.WriteLine($"Du tjänar {svar4} kr efter skatt");
-
-            }
+           
         }
 
     }
