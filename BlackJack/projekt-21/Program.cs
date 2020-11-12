@@ -45,54 +45,52 @@ namespace projekt_21
 
                         // sätt kortVal till "j"
                         //deklarera kortvaö
-                        string kortVal ="";
+                        string kortVal = "";
                         while (kortVal != "n" && spelarensPoäng <= 21)
                         {
                             Console.WriteLine($"Din poäng: {spelarensPoäng}");
                             Console.WriteLine($"Datorns poäng: {datornsPoäng}");
                             Console.WriteLine("Vill du ha ett till kort? (j/n)");
                             kortVal = Console.ReadLine();
+                 break;
 
-                        }
+                // Skriv ut poängställningen
+                // Fråga om spelaren vill ha ett till kort
+                // Läs in kortval
 
-
-                        // Skriv ut poängställningen
-                        // Fråga om spelaren vill ha ett till kort
-                        // Läs in kortval
-
-                        // switch kortVal
-                        // case "j": Dra ett kort till
-                        // case "n": Gör ingenting (loopen kommer sluta köras)
-                        // default: Skriv att alternativet var ogiltigt
-                        break;
+                // switch kortVal
+                // case "j": Dra ett kort till
+                // case "n": Gör ingenting (loopen kommer sluta köras)
+                // default: Skriv att alternativet var ogiltigt
+                
 
                     case "2":
                         //"Visa senaste vinnaren";
                         Console.WriteLine($"senaste vinnaren = { SenasteVinnaren}");
-                        break;
+                break;
 
                     case "3":
                         Console.WriteLine("SPELETS REGLER!:");
-                        Console.WriteLine();
-                        Console.WriteLine("Ditt mål är att tvinga datorn att få mer än 21 poäng.");
-                        Console.WriteLine("Du får poäng genom att dra kort, varje kort har 1-10 poäng.");
-                        Console.WriteLine("Om du får mer än 21 poäng har du förlorat.");
-                        Console.WriteLine("Både du och datorn får två kort i början. Därefter får du");
-                        Console.WriteLine("dra fler kort tills du är nöjd eller får över 21.");
-                        Console.WriteLine("När du är färdig drar datorn kort till den har");
-                        Console.WriteLine("mer poäng än dig eller över 21 poäng.");
-                        break;
+                Console.WriteLine();
+                Console.WriteLine("Ditt mål är att tvinga datorn att få mer än 21 poäng.");
+                Console.WriteLine("Du får poäng genom att dra kort, varje kort har 1-10 poäng.");
+                Console.WriteLine("Om du får mer än 21 poäng har du förlorat.");
+                Console.WriteLine("Både du och datorn får två kort i början. Därefter får du");
+                Console.WriteLine("dra fler kort tills du är nöjd eller får över 21.");
+                Console.WriteLine("När du är färdig drar datorn kort till den har");
+                Console.WriteLine("mer poäng än dig eller över 21 poäng.");
+                break;
 
                     case "4":
                         Console.WriteLine("Spelet Avslutas");
-                        break;
+                break;
 
-                    default:
+                default:
                         Console.WriteLine("Det alternativet är ogiltigt");
-                        break;
-                }
-
+                break;
             }
+
         }
     }
+}
 }
