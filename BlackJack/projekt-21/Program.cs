@@ -6,11 +6,16 @@ namespace projekt_21
     {
         static void Main(string[] args)
         {
+            //vem har vunnit senast
+            string SenasteVinnaren = "ingen har vunnit ännu";
+            Random slump = new Random();
+
             // Skriv välkomstmeddelande
             Console.WriteLine("VÄlkommen till 21:an!");
 
             // deklarera menyVal   
             string menyVal = "0";
+
 
             // while (menyval != ”4”)
             while (menyVal != "4")
@@ -27,12 +32,43 @@ namespace projekt_21
                 // switch menyVal
                 switch (menyVal)
                 {
+                    //"spela en omgång av 21:an"
                     case "1":
-                        //"spela en omgång av 21:an!"
+                        int datornsPoäng = 0;
+                        int spelarensPoäng = 0;
+                        Console.WriteLine("Nu kommer två kort dras per spelare");
+                        //slump ger 2 slumpmässiga nummer mellan 1 -10 till  både spelare och dator
+                        datornsPoäng += slump.Next(1, 11);
+                        datornsPoäng += slump.Next(1, 11);
+                        spelarensPoäng += slump.Next(1, 11);
+                        spelarensPoäng += slump.Next(1, 11);
+
+                        // sätt kortVal till "j"
+                        //deklarera kortvaö
+                        string kortVal ="";
+                        while (kortVal != "n" && spelarensPoäng <= 21)
+                        {
+                            Console.WriteLine($"Din poäng: {spelarensPoäng}");
+                            Console.WriteLine($"Datorns poäng: {datornsPoäng}");
+                            Console.WriteLine("Vill du ha ett till kort? (j/n)");
+                            kortVal = Console.ReadLine();
+
+                        }
+
+
+                        // Skriv ut poängställningen
+                        // Fråga om spelaren vill ha ett till kort
+                        // Läs in kortval
+
+                        // switch kortVal
+                        // case "j": Dra ett kort till
+                        // case "n": Gör ingenting (loopen kommer sluta köras)
+                        // default: Skriv att alternativet var ogiltigt
                         break;
 
                     case "2":
-                        //Console.WriteLine("Visa senaste vinnaren");
+                        //"Visa senaste vinnaren";
+                        Console.WriteLine($"senaste vinnaren = { SenasteVinnaren}");
                         break;
 
                     case "3":
