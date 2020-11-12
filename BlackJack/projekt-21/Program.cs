@@ -11,7 +11,7 @@ namespace projekt_21
             Random slump = new Random();
 
             // Skriv välkomstmeddelande
-            Console.WriteLine("VÄlkommen till 21:an!");
+            Console.WriteLine("Välkommen till 21:an!");
 
             // deklarera menyVal   
             string menyVal = "0";
@@ -43,54 +43,93 @@ namespace projekt_21
                         spelarensPoäng += slump.Next(1, 11);
                         spelarensPoäng += slump.Next(1, 11);
 
-                        // sätt kortVal till "j"
-                        //deklarera kortvaö
+
                         string kortVal = "";
                         while (kortVal != "n" && spelarensPoäng <= 21)
                         {
                             Console.WriteLine($"Din poäng: {spelarensPoäng}");
                             Console.WriteLine($"Datorns poäng: {datornsPoäng}");
                             Console.WriteLine("Vill du ha ett till kort? (j/n)");
-                            kortVal = Console.ReadLine();
-                 break;
+                            string answer = Console.ReadLine();
+                            kortVal = answer.ToLower();
 
-                // Skriv ut poängställningen
-                // Fråga om spelaren vill ha ett till kort
-                // Läs in kortval
+                            switch (kortVal)
+                            {
+                                case "j":
+                                    int nyPoäng = slump.Next(1, 11);
+                                    spelarensPoäng += nyPoäng;
+                                    Console.WriteLine($"Ditt nya kort är värt {nyPoäng} poäng");
+                                    Console.WriteLine($"Din totalpoäng är {spelarensPoäng}");
+                                    break;
 
-                // switch kortVal
-                // case "j": Dra ett kort till
-                // case "n": Gör ingenting (loopen kommer sluta köras)
-                // default: Skriv att alternativet var ogiltigt
-                
+                                case "n":
+                                    break;
+
+                                default:
+                                    Console.WriteLine("Du valde inte ett giltigt alternativ");
+                                    break;
+                            }
+
+                        }
+                        //spelets slut om datorn eller spelaren har mer än 21 poäng
+                        if (spelarensPoäng > 21)
+                        {
+                            Console.WriteLine("Du förlora! Du har mer än 21.");
+                            break; //spelet stannar 
+                        }
+                        //Datorn dara bara en gån och stannar utan while-loopen här
+                        //datorn ska fortsätta dra tills den vinner eller förlorar
+                         while (datornsPoäng < spelarensPoäng && datornsPoäng <= 21)
+                        {
+                            int datornsNyaPoäng = slump.Next(1, 11);
+                            datornsPoäng += datornsNyaPoäng;
+                            Console.WriteLine($"Datorn drog ett kort värt {datornsNyaPoäng}");
+                        }
+                        Console.WriteLine($"Din poäng: {spelarensPoäng}");
+                        Console.WriteLine($"Datorns poäng: {datornsPoäng}");
+
+                        if (datornsPoäng > 21)
+                        {
+                            Console.WriteLine("Du vann!");
+                            Console.WriteLine("Skriv in ditt namn: ");
+                            SenasteVinnaren = Console.ReadLine();
+                        }
+                        
+                   
+                        else
+                        {
+                            Console.WriteLine("Datorn vann!");
+                        }
+
+                        break;
 
                     case "2":
                         //"Visa senaste vinnaren";
                         Console.WriteLine($"senaste vinnaren = { SenasteVinnaren}");
-                break;
+                        break;
 
                     case "3":
                         Console.WriteLine("SPELETS REGLER!:");
-                Console.WriteLine();
-                Console.WriteLine("Ditt mål är att tvinga datorn att få mer än 21 poäng.");
-                Console.WriteLine("Du får poäng genom att dra kort, varje kort har 1-10 poäng.");
-                Console.WriteLine("Om du får mer än 21 poäng har du förlorat.");
-                Console.WriteLine("Både du och datorn får två kort i början. Därefter får du");
-                Console.WriteLine("dra fler kort tills du är nöjd eller får över 21.");
-                Console.WriteLine("När du är färdig drar datorn kort till den har");
-                Console.WriteLine("mer poäng än dig eller över 21 poäng.");
-                break;
+                        Console.WriteLine();
+                        Console.WriteLine("Ditt mål är att tvinga datorn att få mer än 21 poäng.");
+                        Console.WriteLine("Du får poäng genom att dra kort, varje kort har 1-10 poäng.");
+                        Console.WriteLine("Om du får mer än 21 poäng har du förlorat.");
+                        Console.WriteLine("Både du och datorn får två kort i början. Därefter får du");
+                        Console.WriteLine("dra fler kort tills du är nöjd eller får över 21.");
+                        Console.WriteLine("När du är färdig drar datorn kort till den har");
+                        Console.WriteLine("mer poäng än dig eller över 21 poäng.");
+                        break;
 
                     case "4":
                         Console.WriteLine("Spelet Avslutas");
-                break;
+                        break;
 
-                default:
+                    default:
                         Console.WriteLine("Det alternativet är ogiltigt");
-                break;
+                        break;
+                }
+            
             }
-
         }
     }
-}
 }
