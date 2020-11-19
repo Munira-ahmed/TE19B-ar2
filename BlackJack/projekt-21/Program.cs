@@ -22,6 +22,7 @@ namespace projekt_21
             {
                 // Skriv ut meny
                 Console.WriteLine("Välj ett alternativ");
+                Console.WriteLine();
                 Console.WriteLine("1. Spela 21:an");
                 Console.WriteLine("2. Visa senaste vinnaren");
                 Console.WriteLine("3. Spelets regler");
