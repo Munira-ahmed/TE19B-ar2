@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>gissa_ett_tal</RootNamespace>
+    <RootNamespace>Uppgift_5_7</RootNamespace>
   </PropertyGroup>
 
 </Project>
