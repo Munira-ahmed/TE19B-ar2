@@ -16,6 +16,7 @@ namespace Uppgift_5_8
             foreach (var ord in orden)
             {
                 
+                Console.WriteLine(ord);
             }
         }
     }
