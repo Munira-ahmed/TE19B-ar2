@@ -14,37 +14,28 @@ namespace Uppgift_5_14
             string[] svar = { "europa", "4", "1560" , "who"};
 
             Console.WriteLine("Det här är en frågesport!" );
-            Console.WriteLine();
-            
+            Console.WriteLine();  
 
             Console.WriteLine(" 1. Geografisk" );
             Console.WriteLine(" 2. Matematisk" );
             Console.WriteLine(" 3. Historisk" );
             Console.WriteLine(" 4. Samhällskunskap" );
 
-            Console.Write("Vilken typ av fråga vill du svara på?:" );
-            string typ = Console.ReadLine();
+            Console.WriteLine("Vilken typ av fråga vill du svara på?" );
+            Console.Write("Välj en fråga (1 - 4):");
+            int frågeIndex = int.Parse(Console.ReadLine()) - 1;
 
-            if ( typ == 1)
-            {
-                
-            }
+            Console.WriteLine(frågor[frågeIndex]);
+            string användarensSvar = Console.ReadLine().ToLower();
 
-            if ( typ == 2)
+            if (användarensSvar == svar[frågeIndex])
             {
-                
+                Console.WriteLine("Du svarade rätt!");
             }
-
-            if ( typ == 3)
+            else
             {
-                
+                Console.WriteLine("Du svarade fel");
             }
-
-            if ( typ == 4)
-            {
-                
-            }
-             
         }
     }
 }
